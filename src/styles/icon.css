@@ -1,0 +1,64 @@
+/* heart animation */
+.icon-container {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    @apply bg-secondary px-2 py-1 rounded-full;
+}
+
+.icon-active {
+    @apply bg-secondary;
+}
+
+.heart-icon {
+    display: inline-flex;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.animate {
+    animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0 rgba(255, 77, 77, 0));
+    }
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 10px rgba(255, 77, 77, 0.8));
+    }
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0 rgba(255, 77, 77, 0));
+    }
+}
+
+/* collapsible */
+.collapsible-content[data-state='open'] {
+    animation: slideDown 0.25s ease-out;
+}
+
+.collapsible-content[data-state='closed'] {
+    animation: slideUp 0.25s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        height: 0;
+    }
+    to {
+        height: var(--radix-collapsible-content-height);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        height: var(--radix-collapsible-content-height);
+    }
+    to {
+        height: 0;
+    }
+}

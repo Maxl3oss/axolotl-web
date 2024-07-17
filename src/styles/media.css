@@ -1,0 +1,77 @@
+.vds-controls-group{
+  display: flex;
+  justify-items: center;
+  padding: 10px;
+}
+
+.media-player[data-view-type="video"] {
+  aspect-ratio: 16 / 9;
+}
+
+.vds-video-layout {
+  --video-brand: hsl(0, 0%, 96%);
+  /* Layout: https://vidstack.io/docs/player/components/layouts/default-layout#video-layout  */
+  /* Components: https://www.vidstack.io/docs/player/components/layouts/default-layout#components */
+}
+
+.vds-audio-layout {
+  --audio-brand: hsl(0, 0%, 96%);
+  /* Layout: https://vidstack.io/docs/player/components/layouts/default-layout#audio-layout */
+  /* Components: https://www.vidstack.io/docs/player/components/layouts/default-layout#components */
+}
+
+.plyr {
+  --plyr-color-main: hsl(198, 100%, 50%);
+  /* CSS Vars: https://vidstack.io/docs/player/components/layouts/plyr-layout#css-variables */
+}
+
+.media-player {
+  /* Player CSS variables (defaults shown). */
+  --media-font-family: sans-serif;
+  --media-controls-color: #f5f5f5;
+  --media-focus-ring: 0 0 0 3px rgb(78 156 246);
+}
+
+.vds-button {
+  /* CSS variables available for customization (defaults shown). */
+  --media-button-color: var(--media-controls-color, #f5f5f5);
+  --media-button-size: 40px;
+  --media-button-icon-size: 80%;
+  --media-button-padding: 0px;
+  --media-button-border-radius: 8px;
+  --media-button-hover-bg: rgb(255 255 255 / 0.2);
+  --media-button-hover-transform: scale(1);
+  --media-button-hover-transition: transform 0.2s ease-in;
+  --media-button-touch-hover-border-radius: 100%;
+  --media-button-touch-hover-bg: rgb(255 255 255 / 0.2);
+}
+
+.vds-button[data-paused] .pause-icon,
+.vds-button:not([data-paused]) .play-icon {
+  display: none;
+}
+
+.vds-button {
+  /* CSS variables available for customization (defaults shown). */
+  --media-button-color: var(--media-controls-color, #f5f5f5);
+  --media-button-size: 40px;
+  --media-button-icon-size: 80%;
+  --media-button-padding: 0px;
+  --media-button-border-radius: 8px;
+  --media-button-hover-bg: rgb(255 255 255 / 0.2);
+  --media-button-hover-transform: scale(1);
+  --media-button-hover-transition: transform 0.2s ease-in;
+  --media-button-touch-hover-border-radius: 100%;
+  --media-button-touch-hover-bg: rgb(255 255 255 / 0.2);
+}
+
+.vds-button:not([data-muted]) .mute-icon,
+.vds-button:not([data-state='low']) .volume-low-icon,
+.vds-button:not([data-state='high']) .volume-high-icon {
+  display: none;
+}
+
+.vds-button[data-active] .pip-enter-icon,
+.vds-button:not([data-active]) .pip-exit-icon {
+  display: none;
+}

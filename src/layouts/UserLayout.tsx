@@ -5,8 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import UserMenuList from './user/UserMenuList';
-import UserBreadcrumbList from '../base/Breadcrumbs';
 import { UserDropDown } from './user/ProfileUser';
+import Breadcrumbs from '@/components/base/Breadcrumbs';
 
 function UserLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
@@ -58,7 +58,7 @@ function UserLayout({ children }: Readonly<{ children: React.ReactNode }>) {
               </nav>
             </SheetContent>
           </Sheet>
-          <UserBreadcrumbList />
+          <Breadcrumbs />
           <div className="relative ml-auto flex-1 md:grow-0">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input

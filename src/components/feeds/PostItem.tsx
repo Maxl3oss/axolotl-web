@@ -1,10 +1,8 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card';
-import Comments from '../icons/Comments';
-import AnimatedHeart from '../icons/AnimatedHeart';
-import Share from '../icons/Share';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../ui/collapsible';
+import { Card, CardContent, CardFooter, CardHeader } from '../ui/card';
 import Image from 'next/image';
 import AxolotImage from '@/assets/picture/axolotl_loading.gif';
+import ProfilePost from './ProfilePost';
+import PostBar from './PostBar';
 
 type IPostItem = {
   id: number;
@@ -18,34 +16,22 @@ type Props = {
 
 function PostItem() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Card Title</CardTitle>
-        <CardDescription>Card Description</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="bg-secondary/30 p-4 rounded-md">
-          <p>Card Content</p>
+    <Card className="border-0 border-b rounded-none bg-background">
+      <div className="flex flex-col space-y-1.5 px-6 mt-3">
+        <ProfilePost />
+      </div>
+      <CardContent className="-mt-4 space-y-1 ml-[2.3rem] pl-8 pb-2">
+        <div id="header-post">
+          <p>My First Post Axolotl!</p>
+        </div>
+        <div id="image-post" className="bg-secondary/30 p-4 rounded-md">
           <Image alt="pictrue-contents" src={AxolotImage} />
         </div>
       </CardContent>
-      <CardFooter>
-        <Collapsible className="w-full space-y-3">
-          <div className="w-full flex gap-x-2 justify-between">
-            <AnimatedHeart />
-            <div className="space-x-2">
-              <CollapsibleTrigger className="w-fit">
-                <Comments />
-              </CollapsibleTrigger>
-              <Share />
-            </div>
-          </div>
-          <CollapsibleContent className="collapsible-content transition-all duration-1000 ease-in-out overflow-hidden">
-            <div className="bg-secondary p-4 rounded-md transform origin-top transition-transform">
-              Yes. Free to use for personal and commercial projects. No attribution required.
-            </div>
-          </CollapsibleContent>
-        </Collapsible>
+      <CardFooter className="px-6 pb-3">
+        <div className="w-full ml-[0.8rem] mt-2 pl-8">
+          <PostBar />
+        </div>
       </CardFooter>
     </Card>
   );

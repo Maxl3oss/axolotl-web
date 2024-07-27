@@ -16,17 +16,16 @@ const AnimatedHeart: React.FC = () => {
   };
 
   return (
-    <div className="icon-container cursor-pointer" onClick={handleClick}>
+    <button
+      type="button"
+      className={`icon-container cursor-pointer text-sm ${isChecked ? 'text-red-500 icon-active' : 'text-muted-foreground'}`}
+      onClick={handleClick}
+    >
       <div className={`heart-icon ${isAnimating ? 'animate' : ''}`}>
-        <Heart
-          size={18}
-          color={isAnimating || isChecked ? '#ff4d4d' : 'white'}
-          fill={isAnimating || isChecked ? '#ff4d4d' : 'none'}
-          strokeWidth={2}
-        />
+        <Heart size={18} className={isChecked ? 'fill-red-500' : ''} strokeWidth={2} />
       </div>
-      <p className="text-muted-foreground">32</p>
-    </div>
+      <p>32</p>
+    </button>
   );
 };
 

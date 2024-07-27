@@ -13,6 +13,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 type Props = {
   width?: number;
@@ -56,7 +57,7 @@ export default function ProfileUser({ width = 36, height = 36 }: Props) {
 export function UserDropDown() {
   const { getUserSession, logout } = authStore();
   const userInfo = getUserSession();
-  
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -65,12 +66,14 @@ export function UserDropDown() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuLabel>{userInfo?.email ?? ""}</DropdownMenuLabel>
+        <DropdownMenuLabel>{userInfo?.email ?? ''}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>Settings</DropdownMenuItem>
         <DropdownMenuItem>Support</DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="cursor-pointer" onClick={() => logout()}>Logout</DropdownMenuItem>
+        <DropdownMenuItem className="cursor-pointer" onClick={() => logout()}>
+          <Link href={'/auth/login'}>Logout</Link>
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

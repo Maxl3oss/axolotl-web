@@ -2,7 +2,7 @@
 
 import { TooltipProvider } from '@radix-ui/react-tooltip';
 import UserRoutes from './UserRoutes';
-import MenuListHelper from '../../base/MenuListHelper';
+import MenuListHelper from '@/components/base/MenuListHelper';
 
 export default function UserMenuList({ isDesktop }: { isDesktop: boolean }) {
   return UserRoutes.map((item, index) => (

@@ -4,7 +4,7 @@
     gap: 5px;
     align-items: center;
     justify-content: center;
-    @apply bg-secondary px-2 py-1 rounded-full;
+    @apply px-2 py-1 rounded-full text-sm hover:bg-secondary cursor-pointer;
 }
 
 .icon-active {

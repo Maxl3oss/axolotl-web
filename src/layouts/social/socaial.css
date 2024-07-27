@@ -1,0 +1,28 @@
+.btn-menu-nav {
+    @apply text-muted-foreground grow h-16 w-4/5 md:w-full flex items-center justify-center rounded-md hover:bg-secondary;
+}
+
+.btn-menu-nav.is-active {
+    @apply text-white;
+}
+
+/* nav */
+.nav-contrainer {
+    @apply sticky inset-0 bg-background/60 backdrop-blur-xl z-50 h-20 w-full flex justify-center items-center;
+}
+
+.container-nav-center {
+    @apply flex md:max-w-xl md:min-w-[600px];
+}
+
+.nav-main-btn {
+    @apply px-16 hidden grow md:grid grid-cols-5 gap-1 place-items-center transform;
+}
+
+.container-nav-sub {
+    @apply max-w-80 w-full h-full p-5 flex items-center;
+}
+
+.menu-moblile {
+    @apply fixed bottom-0 flex md:hidden w-full bg-background/60 backdrop-blur-md;
+}

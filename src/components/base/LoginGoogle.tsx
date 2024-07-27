@@ -8,6 +8,7 @@ import SignInWindow from './SignInWindow';
 import { stringToJSONSchema } from '@/lib/utils';
 import useAuthStore, { DataLogin } from '@/store/authStore';
 import { useRouter } from 'next/navigation';
+import { LoaderIcon } from 'lucide-react';
 
 function LoginGoogle() {
   const router = useRouter();
@@ -23,15 +24,15 @@ function LoginGoogle() {
     if (result.success) {
       const jsonParse: DataLogin = JSON.parse(data);
       login(jsonParse);
-      router.push('/user/dashboard');
+      router.push('/');
     }
   };
 
   return (
     <Fragment>
-      <Button onClick={() => handleLoginGoogle()} variant="outline" className="w-full flex gap-x-2">
-        <FcGoogle size={22} />
-        Login with Google
+      <Button onClick={() => handleLoginGoogle()} variant="outline" className="w-full flex gap-x-2 items-center h-14">
+        {showSignInWindow ? <LoaderIcon size={22} className="animate-spin" /> : <FcGoogle size={22} />}
+        <h3 className="text-base font-semibold">Login with Google</h3>
       </Button>
       {showSignInWindow ? (
         <SignInWindow

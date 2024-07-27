@@ -38,6 +38,11 @@ export default function Login() {
             <Button type="submit" className="w-full">
               Login
             </Button>
+            <div className="flex items-center gap-x-3 w-full">
+              <div className="grow my-5 border-t-2" />
+              or
+              <div className="grow my-5 border-t-2" />
+            </div>
             <LoginGoogle />
           </div>
           <div className="mt-4 text-center text-sm">

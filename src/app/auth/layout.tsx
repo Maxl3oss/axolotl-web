@@ -1,9 +1,5 @@
-import NoneLayout from "@/components/layouts/NoneLayout"
+import NoneLayout from '@/layouts/NoneLayout';
 
-export default function AuthLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return <NoneLayout>{children}</NoneLayout>
+export default function AuthLayout({ children }: { children: React.ReactNode }) {
+  return <NoneLayout>{children}</NoneLayout>;
 }

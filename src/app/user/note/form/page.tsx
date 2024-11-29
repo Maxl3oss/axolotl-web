@@ -63,6 +63,7 @@ function FormNote() {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     const data = { ...values };
+    data.createdBy = userInfo?.id ?? "";
     const isEdit = data.noteCode !== '';
 
     const res = isEdit ? await updateNote(data) : await createNote(data);
@@ -74,7 +75,7 @@ function FormNote() {
       router.push('/user/note');
     } else {
       toast(`${isEdit ? 'Updated' : 'Created'} note failed`, {
-        description: '',
+        description: res?.message ?? '',
         icon: <XCircle className="text-red-500" />,
       });
     }
